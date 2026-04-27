@@ -43,7 +43,7 @@ The system identifies such deviations and generates trading signals assuming the
 ## 🏗️ System Architecture
 
 The system follows a modular pipeline:
--Data Ingestion → Pair Selection → Cointegration Testing → Spread Modeling
+Data Ingestion → Pair Selection → Cointegration Testing → Spread Modeling
 → Signal Generation → Portfolio Construction → Backtesting → Performance Metrics
 
 ---
