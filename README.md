@@ -40,11 +40,43 @@ The system identifies such deviations and generates trading signals assuming the
 
 ---
 
+## 🧠 Strategy Intuition
+
+Cointegrated assets share a long-term equilibrium relationship.  
+Short-term deviations from this equilibrium create mean-reverting opportunities.
+
+The strategy exploits these deviations by taking opposing positions in the pair, expecting the spread to revert.
+
+---
+
+## 📐 Mathematical Formulation
+
+Let X_t and Y_t be two cointegrated assets.
+
+Spread:
+S_t = X_t - βY_t
+
+Z-score:
+Z_t = (S_t - μ) / σ
+
+Trading Rules:
+- Enter long spread if Z_t < -threshold  
+- Enter short spread if Z_t > threshold  
+- Exit when Z_t approaches 0
+
 ## 🏗️ System Architecture
 
 The system follows a modular pipeline:
 Data Ingestion → Pair Selection → Cointegration Testing → Spread Modeling
 → Signal Generation → Portfolio Construction → Backtesting → Performance Metrics
+
+---
+
+## 🔬 Statistical Validation
+
+- Cointegration is tested using the Engle-Granger method  
+- Stationarity of residuals is validated using the Augmented Dickey-Fuller (ADF) test  
+- Only statistically significant pairs are selected for trading
 
 ---
 
